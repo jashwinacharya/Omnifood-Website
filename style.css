@@ -1,0 +1,444 @@
+/*----------------------BASIC SETUP-----------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    color: #555;
+    font-family: 'Lato', 'Arial';
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix {zoom:1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/*-----------------ROWS AND SECTIONS--------------*/
+
+/*Making a container using div called row and centering it*/
+.row{
+    max-width: 1140px;
+    margin:0 auto;       /*This is used for centering the row*/
+}
+
+section{
+    padding: 50px 0px;
+}
+
+/*-------------Setting up the header--------------*/
+header{
+    /*This inserts a background image. Linear gradient helps to apply a fading gradient color.*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.7)), url(IMAGES/hero.jpg);
+    
+    /*This makes sure our image covers the entire webpage*/
+    background-size: cover;
+    
+    /*Centres our background image*/
+    background-position: center;
+    
+    /*100vh means cover 100% of our viewport(the webpage)*/
+    height: 100vh
+}
+
+/*--------HEADING-----------*/
+h1, h2, h3{
+    font-weight: 300;
+    
+    /*Turns all the text in the heading to uppercase*/
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1{
+    /*This removes the whitespace between our heading and the top*/
+    margin: 0;
+    color: chocolate;
+    
+    /*Font size is 200% of the font-size we defined in the html function (200% of 20px is 40px)*/
+    font-size: 240%;
+    word-spacing: 4px;
+    
+    /* Inserts some space between the heading and the buttons */
+    margin-bottom: 10px;
+}
+
+h2{
+    font-size: 170%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3{
+    font-size: 110%;
+    color: crimson;
+    margin-bottom: 12px;
+    
+    /*This makes sure the heading remains in one line and doesnt continue to the other.*/
+    width: 110%;
+}
+
+/* This inserts a line right after the h2 heading.*/
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: darkgoldenrod;
+    margin-bottom: 10px;
+    
+    /*Since we only want a line and no text, we leave content blank*/
+    content: " ";
+    width: 100px;
+    position: relative;
+    
+    /*This centers the line*/
+    margin: 0px auto;
+    
+    margin-top: 30px;
+}
+
+/*------------PARAGRPAHS---------------*/
+.long-copy{
+    /*Modify the spacing between the lines of the paragraph*/
+    line-height: 145%;
+    
+    /*Modify the width so that some of the information goes to the next line*/
+    width: 70%;
+    
+    /*Center the text*/
+    margin-left: 15%;
+}
+
+.box{
+    /*This inserts space between the boxes (infinity, clock, organic and order)*/
+    padding: 1%;
+}
+
+/* Choose all paragraphs inside the box class */
+.box p{
+    line-height: 145%;
+    font-size: 85%;
+}
+
+/*--------------ICONS--------------------*/
+.icon-big{
+    font-size: 350%;
+    display: block;
+    color: chocolate;
+    margin-bottom: 1px;
+}
+
+/*-----------CONTAINER---------------*/
+.hero-text-box{
+    /*Centres the text box*/
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    
+    /*means cut 50% of width and 50% of height*/
+    transform: translate(-50%,-50%);
+}
+
+/*---------------BUTTONS----------------------*/
+
+/*link means that our buttons are just normal links. Visited means that the link changes color once we click on it. In this case the link color DOESNT change when we click on it.*/
+.btn:link,
+.btn:visited { 
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    
+    /*This removes the underline from the links*/
+    text-decoration: none;
+    
+    border-radius: 50px;
+    border: 1px solid chocolate;
+    
+    /* This changes the color of the box after 0.2s when we hover over it. */
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited{
+    background-color: azure;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    background-color: azure;
+}
+
+/*This changes the color of the box when our cursor hovers above it*/
+.btn:hover,
+.btn:active{
+    background-color: blanchedalmond;
+}
+
+/*---------------------NAVIGATION BAR-------------------------*/
+.logo{
+    /*Format logo size*/
+    height: 150px;
+    width: auto;
+    
+    /*this pushes are list elements to the left of the logo*/
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav{
+    float: right;
+    
+    /*Removes bullet points*/
+    list-style: none;
+    margin-top: 90px;
+    transform: translate(-10%,-50%);
+}
+
+/*Choose all li elements inside main-nav class*/
+.main-nav li{
+    /*Makes the links appear side by side*/
+    display: inline-block;
+    margin-right: 40px;
+}
+
+/*Choose all the links in the li elements inside the main-nav class*/
+.main-nav li a:link, 
+.main-nav li a:visited {
+    color: antiquewhite;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 105%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.main-nav li a:hover, 
+.main-nav li a:active{
+    border-bottom: 2px solid chocolate;
+    padding: 3px;
+}
+
+/*--------------------FEATURES---------------------*/
+
+.section-features .long-copy{
+    margin-bottom: 19px;
+}
+
+/*---------------------MEALS------------------------*/
+.meals-showcase{
+    /*Remove any bullet points*/
+    list-style: none;
+    
+    /*Make sure the images cover the entire section*/
+    width: 100%;
+}
+
+/* Choose all list elements inside the meal-showcase class*/
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo{
+    /*Width of container*/
+    width: 100%;
+    margin: 0;
+    
+    /*This is important when we scale the image beyond the width of the container (check .meal-photo img class below)*/
+    overflow: hidden;
+    
+    /*Having a black background allows the images to appear dark*/
+    background-color: black;
+}
+
+.meal-photo img{
+    /* Sets the width of the image equal to the width of our container (meal-photo class) */
+    width: 100%;
+    height: auto;
+    
+    /* This makes the images dark */
+    opacity: 0.7;
+    
+    /*Scale the image so that it is 115% of the width of our container*/
+    transform: scale(1.15);
+        
+    /* This creates a nice transition */
+    transition: transform 0.5s, opacity 0.1s;
+}
+
+.meal-photo img:hover {
+    /* This reduces the image size when our cursor hovers over it */
+    transform: scale(1.03);
+    
+    /* This lights up the photo when we hover over it */
+    opacity: 1.0;
+}
+
+.section-meals{
+    /*Reduce space between the 2 sections*/
+    padding-top: 0px;
+}
+
+
+
+/*------------------HOW IT WORKS SECTION--------------------------*/
+
+.section-steps {
+    background-color: brown;
+    background-color: rgba(247, 247, 247, 0.91);
+}
+
+/* Another way of choosing the iphone image and modifying it*/
+.steps-box:first-child {
+    /*Shifts the iphone image to the right (line 187)*/
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+/* Another way of choosing all the bullet points next to the iphone (line 191)*/
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+/*Decrease size of iphone photo*/
+.app-screen {
+    width: 40%;
+}
+
+/*Space out the 3 points*/
+.works-step {
+    margin-bottom: 40px;
+}
+
+/* Inserts space between the 3rd point and the app store images */
+.works-step:last-of-type{
+    margin-bottom: 120px;
+}
+
+/* Formatting the numbered points */
+.works-step div{
+    display: inline-block;
+    border: 1px solid chocolate;
+    padding: 5px;
+    color: chocolate;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 34px;
+    float: left;
+    margin-right: 15px;
+}
+
+/* Modifying the iphone app store and android store images so that their heights are equal*/
+.btn-app img{
+    height: 50px;
+    width: auto;
+    margin-right: 29px;
+}
+
+/*-----------------------------WE'RE CURRENTLY IN THESE CITIES SECTION---------------------------*/
+
+/*Reducing the size of an image and insert space between the images*/
+.section-img img {
+    width: 110%;
+    padding-right: 50px;
+}
+
+/*Modifying the icons*/
+.icon-small {
+    margin-left: 5px;
+    float: left;
+}
+
+/*Modifying the paragraphs below the images*/
+.section-img p { 
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+/* Change color of icons */
+.section-img i {
+    color: coral;
+}
+
+/* Change color of the links */
+.section-img a {
+    margin-left: 10px;
+    color: chocolate;
+}
+
+/*Place line below the twitter links*/
+.section-img a:link,
+.section-img a:visited {
+    text-decoration: none;
+    border-bottom: 1px solid chocolate;
+    padding-bottom: 1px;
+}
+
+/*-----------------------------TESTIMONIALS---------------------------*/
+
+/*Modify the background of the testimonials section*/
+.section-testimonials{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.7)),url(IMAGES/back-customers.jpg);
+    background-size: cover;
+    background-color: black;
+    height: 100vh;
+    color: bisque;
+    
+    /*Gives a cool effect*/
+    background-attachment: fixed;
+}
+
+/* Modify the quotes */
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 50px;
+}
+
+/*Insert the quotation mark before the quote*/
+blockquote:before {
+    content: " \201C ";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: -15px;
+}
+
+/*Modify the names*/
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    
+    /*This makes sure the names appear on the next line after the quote*/
+    display: block;
+}
+
+/*Modify the images of the people*/
+cite img{
+    height: 50px;
+    border: 1px solid black;
+    border-color: burlywood;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+    /*This centers the name of the people with respect to their images*/
+    vertical-align: middle;
+}
