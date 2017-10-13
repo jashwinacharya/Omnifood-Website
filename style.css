@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -12,6 +13,7 @@ html{
     font-size: 20px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 .clearfix {zoom:1}
@@ -37,6 +39,7 @@ section{
 /*-------------Setting up the header--------------*/
 header{
     /*This inserts a background image. Linear gradient helps to apply a fading gradient color.*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), to(rgba(0, 0, 0, 0.7))), url(IMAGES/hero.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.7)), url(IMAGES/hero.jpg);
     
     /*This makes sure our image covers the entire webpage*/
@@ -145,6 +148,7 @@ h2:after{
     left: 50%;
     
     /*means cut 50% of width and 50% of height*/
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
 
@@ -152,7 +156,7 @@ h2:after{
 
 /*link means that our buttons are just normal links. Visited means that the link changes color once we click on it. In this case the link color DOESNT change when we click on it.*/
 .btn:link,
-.btn:visited { 
+.btn:visited{ 
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
@@ -164,6 +168,7 @@ h2:after{
     border: 1px solid chocolate;
     
     /* This changes the color of the box after 0.2s when we hover over it. */
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -200,6 +205,7 @@ h2:after{
     /*Removes bullet points*/
     list-style: none;
     margin-top: 90px;
+    -webkit-transform: translate(-10%,-50%);
     transform: translate(-10%,-50%);
 }
 
@@ -218,6 +224,7 @@ h2:after{
     text-transform: uppercase;
     font-size: 105%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
     transition: border-bottom 0.3s;
 }
 
@@ -270,14 +277,19 @@ h2:after{
     opacity: 0.7;
     
     /*Scale the image so that it is 115% of the width of our container*/
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
         
     /* This creates a nice transition */
+    -webkit-transition: opacity 0.1s, -webkit-transform 0.5s;
+    transition: opacity 0.1s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.1s;
+    transition: transform 0.5s, opacity 0.1s, -webkit-transform 0.5s;
 }
 
 .meal-photo img:hover {
     /* This reduces the image size when our cursor hovers over it */
+    -webkit-transform: scale(1.03);
     transform: scale(1.03);
     
     /* This lights up the photo when we hover over it */
@@ -294,8 +306,11 @@ h2:after{
 /*------------------HOW IT WORKS SECTION--------------------------*/
 
 .section-steps {
-    background-color: brown;
     background-color: rgba(247, 247, 247, 0.91);
+}
+
+.steps-box{
+    margin-top: 30px;
 }
 
 /* Another way of choosing the iphone image and modifying it*/
@@ -393,6 +408,7 @@ h2:after{
 
 /*Modify the background of the testimonials section*/
 .section-testimonials{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), to(rgba(0, 0, 0, 0.7))),url(IMAGES/back-customers.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.7)),url(IMAGES/back-customers.jpg);
     background-size: cover;
     background-color: black;
@@ -441,4 +457,181 @@ cite img{
     
     /*This centers the name of the people with respect to their images*/
     vertical-align: middle;
+}
+
+/*-----------------------------SIGN UP SECTION---------------------------*/
+
+/*Set background color*/
+.section-plans{
+    background-color: rgba(247, 247, 247, 0.91);
+}
+
+/* Format the 3 sign up rows*/
+.plan-box{
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    
+    /*Add some box shadow*/
+    -webkit-box-shadow: 0 2px 2px #e3e3e3;
+    box-shadow: 0 2px 2px #e3e3e3;
+}
+
+/*Formatting the div containers in the sign up section*/
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid rgba(199, 198, 198, 0.69);
+}
+
+/*Fromat the text color and background color of the sign up button*/
+.plan-box .btn-full{
+    color: brown;
+    background-color: white;
+}
+
+/* This changes the color of the sign up button when we hover over it. */
+.plan-box .btn-full:hover{
+    background-color: bisque;
+    -webkit-transition-delay: 0.075s;
+    transition-delay: 0.075s;
+}
+
+/*Format list elements*/
+.plan-box li{
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+/*Format the check marks*/
+.plan-box .ion-checkmark-round{
+    margin-right: 10px;
+    color: crimson;
+}
+
+/* This formats the sign up box */
+.plan-box div:last-child{
+    text-align: center;
+}
+
+/* Format the monthly money plan part */
+.plan-box div:first-child{
+    background-color: #fcfcfc;
+}
+
+/*Format the prices*/
+.plan-price{
+    font-size: 60px;
+    font-family: sans;
+    margin-bottom: 15px;
+    font-weight: 300;
+    color: firebrick;
+}
+
+/*Format text right under prices*/
+.plan-price-meal{
+    font-size: 80%;
+}
+
+.plan-price span{
+    font-size: 30%;
+    font-weight: 300;
+}
+
+/************************************FORM SECTION*************************************/
+
+/*Centre the contact form and reduce the container size*/
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Format the bozes. The [] helps select what type of input we want to have formatted*/
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+textarea{
+    height: 100px;
+}
+
+input[type=checkbox]{
+    margin: 10px 5px 10px 0px;
+}
+
+input[type = submit]{
+    padding: 10px 35px;
+    border-radius: 56px;
+    background-color: rgba(229, 73, 3, 0.96);
+    color: azure;
+}
+
+*:focus {outline: none;}
+
+
+/*****************************************FOOTER**************************************/
+
+footer{
+    background-color: #333;
+    padding: 60px;
+}
+
+.footer-nav li{
+    list-style-type: none;
+    float: left;
+    padding: 0px 20px;
+}
+
+.social-links li{
+    list-style-type: none;
+    float: right;
+    padding: 0px 20px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    color: #cb8403;
+    text-decoration: none;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 140%;
+}
+
+.ion-social-facebook:hover{
+    color: #3b5998;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-social-twitter:hover{
+    color: #00aced;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-social-googleplus:hover{
+    color: #dd4b39;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-social-instagram:hover{
+    color: #517fa4;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+footer p{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
 }
