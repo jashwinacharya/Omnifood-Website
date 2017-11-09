@@ -191,12 +191,23 @@ h2:after{
 /*---------------------NAVIGATION BAR-------------------------*/
 .logo{
     /*Format logo size*/
-    height: 150px;
+    height: 100px;
     width: auto;
     
-    /*this pushes are list elements to the left of the logo*/
+    /*this pushes list elements to the left of the logo*/
     float: left;
     margin-top: 20px;
+}
+
+.logo-black{
+    /*Format logo size*/
+    height: 50px;
+    width: auto;
+    
+    /*this pushes list elements to the left of the logo*/
+    float: left;
+    margin-top: 15px;
+    display: none;
 }
 
 .main-nav{
@@ -214,6 +225,7 @@ h2:after{
     /*Makes the links appear side by side*/
     display: inline-block;
     margin-right: 40px;
+    margin-bottom: -20px;
 }
 
 /*Choose all the links in the li elements inside the main-nav class*/
@@ -234,6 +246,46 @@ h2:after{
     padding: 3px;
 }
 
+/* Mobile Navigation */
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: white;
+}
+/*Sticky navi*/
+.sticky{
+    /*Keep the navigation bar's position fixed irrespective of our scrolling*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0px 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav{
+    margin-top: 30px;
+}
+
+.sticky .main-nav li a:link, 
+.sticky .main-nav li a:visited {
+    color: #555;
+}
+
+/*Whenever we scroll down, display the black logo only*/
+.sticky .logo{
+    display: none;
+}
+.sticky .logo-black{
+    display: block;
+}
 /*--------------------FEATURES---------------------*/
 
 .section-features .long-copy{
@@ -634,4 +686,36 @@ footer p{
     text-align: center;
     font-size: 18px;
     margin-top: 30px;
+}
+
+/*************************** ANIMATIONS *************************/
+
+/* Make element invisible so that when we scroll to it, it fade's in */
+.js--wp-1{
+    opacity: 0;
+}
+
+/* Element has js class as well as animated class */
+.js--wp-1.animated{
+    opacity: 1;
+}
+
+/* Make element invisible so that when we scroll to it, it fade's in */
+.js--wp-2{
+    opacity: 0;
+}
+
+/* Element has js class as well as animated class */
+.js--wp-2.animated{
+    opacity: 1;
+}
+
+/* Make element invisible so that when we scroll to it, it fade's in */
+.js--wp-3{
+    opacity: 0;
+}
+
+/* Element has js class as well as animated class */
+.js--wp-3.animated{
+    opacity: 1;
 }

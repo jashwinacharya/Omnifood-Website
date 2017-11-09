@@ -9,7 +9,9 @@
         <link rel = "stylesheet" type = "text/css" href = "VENDORS/CSS/ionicons.min.css">
         <link rel = "stylesheet" type = "text/css" href = "RESOURCES/CSS/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "VENDORS/CSS/animate.css">
         <title> OMNIFOOD </title>
+        
     </head>
     
     <body>
@@ -18,28 +20,28 @@
             <nav>
                 <div class="row">
                     <img src="RESOURCES/IMG/logo-white.png" alt="OMNIFOOD LOGO" class="logo">
-                    
+                    <img src="RESOURCES/IMG/logo.png" alt="OMNIFOOD LOGO" class="logo-black">
                     <!--ul means unordered list-->
-                    <ul class = "main-nav">
-                        
+                    <ul class = "main-nav js--main-nav">
                         <!--li means list element-->
                         <li>
-                            <a href="#"> Food Delivery </a>
+                            <a href="#features"> Food Delivery </a>
                         </li>
                         
                         <li>
-                            <a href="#"> How It Works </a>
+                            <a href="#works"> How It Works </a>
                         </li>
                         
                         <li>
-                            <a href="#"> Our Cities </a>
+                            <a href="#cities"> Our Cities </a>
                         </li>
                         
                         <li>
-                            <a href="#"> Sign Up </a>
+                            <a href="#plans"> Sign Up </a>
                         </li>
                         
                     </ul>
+                    <a class = "mobile-nav-icon js--nav-icon"><i class = "ion-navicon-round"></i></a>
                 </div>
             </nav>
             <div class = "hero-text-box">
@@ -48,15 +50,13 @@
                 </h1>
                 
                 <!--These are the links to different sections of our page. &nbsp inserts space.-->
-                <a class = "btn btn-full" href = "#" style ="color:darkred"> I'm hungry </a> 
-                
-                <a class = "btn btn-ghost" href = "#" style ="color:darkred"> Show me more </a>
-                
+                <a class = "btn btn-full js--scroll-to-plans" href = "#" style ="color:darkred"> I'm hungry </a> 
+                <a class = "btn btn-ghost js--scroll-to-start" href = "#" style ="color:darkred"> Show me more </a>
             </div>
         </header>
         
         <!-------------------------BUILDING THE SECOND SECTION----------------------------->
-        <section class = "section-features">
+        <section class = "section-features js--section-features" id = "features">
             <div class = "row">
 
                 <!-- &mdash inserts a longer '-' -->
@@ -68,7 +68,7 @@
                 
             </div>
             
-            <div class = "row">
+            <div class = "row js--wp-1">
                 
                 <!-- This class is used from the grid.css file. col, span-1-of-4 and box are 3 different classes-->
                 <div class = "col span-1-of-4 box">
@@ -181,7 +181,7 @@
         </section>
         
         <!-------------------------BUILDING THE FOURTH SECTION----------------------------->
-        <section class = "section-steps">
+        <section class = "section-steps" id = "works">
             
             <div class = "row">
                 <h2> How it works &mdash; Simple as 1, 2, 3 </h2>
@@ -190,7 +190,7 @@
             <div class = "row">
                 
                 <div class = "col span-1-of-2 steps-box">
-                    <img src = "RESOURCES/IMG/app-iPhone.png" alt = "Omnifood Iphone App" class = "app-screen">
+                    <img src = "RESOURCES/IMG/app-iPhone.png" alt = "Omnifood Iphone App" class = "app-screen js--wp-2">
                 </div>
                 
                 <div class = "col span-1-of-2 steps-box">
@@ -226,7 +226,7 @@
         </section>
         
         <!-------------------------BUILDING THE FIFTH SECTION----------------------------->
-        <section class = "section-cities">
+        <section class = "section-cities js--wp-3" id = "cities">
             
             <div class = "row">
                 <h2> We're currently in these cities </h2>
@@ -343,7 +343,7 @@
         </section>
     
         <!--------------------------------------SIGN UP SECTION-------------------------------------->
-        <section class = "section-plans">
+        <section class = "section-plans js--section-plans" id = "plans">
             
             <div class = "row">
                 <h2> Start eating healthy today </h2>
@@ -351,7 +351,7 @@
             
             <div class ="row">
             
-                <div class = "col span-1-of-3">
+                <div class = "col span-1-of-3 js--wp-4">
                     <div class = "plan-box">
                         <div>
                             <h3> Premium </h3>
@@ -541,5 +541,9 @@
                 </p>
             </div>
         </footer>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src = "VENDORS/JAVASCRIPT/jquery.waypoints.min.js"></script>
+        <script src = "RESOURCES/JAVASCRIPT/script.js"></script>
     </body>
 </html>
